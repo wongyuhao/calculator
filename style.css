@@ -1,0 +1,59 @@
+body{
+
+}
+
+#outer-container{
+    align-items: center;
+    display:flex;
+    flex-direction: column;
+   
+
+}
+
+#display-area{
+    height: 25vh;
+    width: 25vw;
+    background-color:yellow;
+}
+
+.button{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 150%;
+    
+}
+
+
+#button-area{
+    height: 75vh;
+    width: 25vw;
+    background-color:blue;
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(5,1fr);
+    grid-template-areas: 
+    " clr   blk     blk     divd"
+    " seven eight   nine    mult"
+    " four  five    six     minus"
+    " one   two     three   plus"
+    " zro   zro     dec     calc";
+}
+
+#btn0 {grid-area:zro;}
+#btn1{grid-area:one;}
+#btn2{grid-area:two;}
+#btn3{grid-area:three;}
+#btn4{grid-area:four;}
+#btn5{grid-area:five;}
+#btn6{grid-area:six;}
+#btn7{grid-area:seven;}
+#btn8{grid-area:eight;}
+#btn9{grid-area:nine;}
+#btnPl{grid-area:plus;}
+#btnMn{grid-area:minus;}
+#btnMl{grid-area:mult;}
+#btnDv{grid-area:divd;}
+#btnCLR{grid-area:clr;}
+#btnCALC{grid-area:calc;}
+#btnDv{grid-area:divd;}
+#btnDec{grid-area:dec}
+#btnBlank{grid-area: blk;}
