@@ -55,7 +55,7 @@ body{
     grid-template-columns: repeat(4,1fr);
     grid-template-rows: repeat(5,1fr);
     grid-template-areas: 
-    " clr   del     blk     divd"
+    " clr   del     pow     divd"
     " seven eight   nine    mult"
     " four  five    six     minus"
     " one   two     three   plus"
@@ -80,5 +80,5 @@ body{
 #btnCALC{grid-area:calc;}
 #btnDv{grid-area:divd;}
 #btnDEC{grid-area:dec}
-#btnBlank{grid-area: blk;}
+#btnPOW{grid-area:pow;}
 #btnDEL{grid-area:del;}

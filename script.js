@@ -141,6 +141,10 @@ function divide(a,b){
     return a/b;
 }
 
+function power(a,b){
+    return a**b;
+}
+
 function operate(a,b,opr){
   a= +a;
   b= +b;
@@ -161,6 +165,10 @@ function operate(a,b,opr){
           console.log("divide");
           return divide(a,b);
       }
+      case "POWER":{
+          console.log("power");
+          return power(a,b);
+      }
   }
 }//exit operate()
 
@@ -168,23 +176,31 @@ function calculate(arr){
     console.log("enter calculate()")
     
     while(arr.length>1){
-        let index = arr.findIndex(e => (e==="MULTIPLY"||e==="DIVIDE"));
-        if(index === -1){
-            
-            //if no multiply or div found, find next plus or minus
-            let index = arr.findIndex(e => (e==="ADD"||e==="MINUS"));
-            console.log(`pre-operation: ${arr}`)
-            //if found, carry out operation;
-            let result = operate(arr[index-1],arr[index+1],arr[index]);
-            console.log(`RESULT: ${result}`);
-            arr.splice(index-1,3,result);
-            console.log(`post-operation: ${arr}`)
+        let index = arr.findIndex(e => (e==="POWER"))
+        if(index===-1){
+            let index = arr.findIndex(e => (e==="MULTIPLY"||e==="DIVIDE"));
+            if(index === -1){
 
+                //if no multiply or div found, find next plus or minus
+                let index = arr.findIndex(e => (e==="ADD"||e==="MINUS"));
+                console.log(`pre-operation: ${arr}`)
+                //if found, carry out operation;
+                let result = operate(arr[index-1],arr[index+1],arr[index]);
+                console.log(`RESULT: ${result}`);
+                arr.splice(index-1,3,result);
+                console.log(`post-operation: ${arr}`)
+
+            }else{
+                let result = operate(arr[index-1],arr[index+1],arr[index]);
+                console.log(`RESULT: ${result}`);
+                arr.splice(index-1,3,result);
+                console.log(`post-operation: ${arr}`)
+            }
         }else{
             let result = operate(arr[index-1],arr[index+1],arr[index]);
-            console.log(`RESULT: ${result}`);
-            arr.splice(index-1,3,result);
-            console.log(`post-operation: ${arr}`)
+                console.log(`RESULT: ${result}`);
+                arr.splice(index-1,3,result);
+                console.log(`post-operation: ${arr}`)
         }
     }
     console.log("calculate: exit while loop")
@@ -208,6 +224,10 @@ function formatOutput(arr){
             }
             case "DIVIDE":{
                 optString+=" ÷ ";
+                break;
+            }
+            case "POWER":{
+                optString+=" ^ ";
                 break;
             }
             default:{
