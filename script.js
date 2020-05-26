@@ -3,8 +3,8 @@ window.onload=function(){
 const upper =this.document.querySelector("#entered-text");
 const lower = this.document.querySelector("#result-text");
 
-upper.textContent="upper keys";
-lower.textContent="lower keys";
+upper.textContent="";
+lower.textContent="";
 
 let keylog=[];
 let digitHolder="";
@@ -34,6 +34,18 @@ oprBtns.forEach(btn => {
         updateDisplay();
         }
     })
+})
+
+const minusBtn = document.querySelector("#btnMn");
+minusBtn.addEventListener("click", function(){
+    if(digitHolder===""&&!digitHolder.includes("-")){
+        digitHolder+="-";
+    }else{
+    addEntry(digitHolder);
+    addEntry(this.value);
+    
+    }
+    updateDisplay();
 })
 
 //function buttons
