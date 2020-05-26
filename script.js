@@ -97,7 +97,21 @@ calcBtn.addEventListener("click",function(){
 
 function deleteChar(){
     if (digitHolder===""){
-        console.log("nothing to delete");
+        let tempStr =keylog[keylog.length-1];
+        if(
+            tempStr==="ADD"||
+            tempStr==="MINUS"||
+            tempStr==="MULTIPLY"||
+            tempStr==="DIVIDE"||
+            tempStr==="POWER"
+            ){
+            keylog.pop();
+            digitHolder=keylog.pop();
+            }
+        // }else{
+        //     keylog[keylog.length-1] = tempStr.substr(0,tempStr.length-1)
+        // }
+
     }else{
        digitHolder= digitHolder.substr(0,digitHolder.length-1);
        console.log(`deleted, new: ${digitHolder}`);
@@ -117,6 +131,7 @@ function clearDisplay(){
 
 function updateDisplay(){
     console.log("update display")
+    console.log(keylog);
     upper.textContent = formatOutput(keylog) +digitHolder;
 ;
     
