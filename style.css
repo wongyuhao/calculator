@@ -11,14 +11,38 @@ body{
 }
 
 #display-area{
+    display: flex;
+    flex-direction: column;
     height: 25vh;
     width: 25vw;
     background-color:yellow;
 }
+#entered-area{
+
+    height:12.5vh;
+    width:25vw;
+    text-align: right;
+    background-color:grey;
+}
+#entered-text{
+    padding:10px;
+      
+}
+#result-area{
+
+    height:12.5vh;
+    width:25vw;
+    text-align: right;
+    background-color:pink;
+}
+#result-text{
+    padding:10px;
+      
+}
 
 .button{
     font-family: 'Courier New', Courier, monospace;
-    font-size: 150%;
+    font-size: auto;
     
 }
 
@@ -31,7 +55,7 @@ body{
     grid-template-columns: repeat(4,1fr);
     grid-template-rows: repeat(5,1fr);
     grid-template-areas: 
-    " clr   blk     blk     divd"
+    " clr   del     blk     divd"
     " seven eight   nine    mult"
     " four  five    six     minus"
     " one   two     three   plus"
@@ -55,5 +79,6 @@ body{
 #btnCLR{grid-area:clr;}
 #btnCALC{grid-area:calc;}
 #btnDv{grid-area:divd;}
-#btnDec{grid-area:dec}
+#btnDEC{grid-area:dec}
 #btnBlank{grid-area: blk;}
+#btnDEL{grid-area:del;}
