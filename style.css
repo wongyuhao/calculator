@@ -1,4 +1,8 @@
-body{
+html{
+    background-color: black;
+    color:black;
+    font-family: "Roboto Mono",monospace;
+    font-size:30px;
 
 }
 
@@ -6,7 +10,7 @@ body{
     align-items: center;
     display:flex;
     flex-direction: column;
-   
+    
 
 }
 
@@ -14,46 +18,62 @@ body{
     display: flex;
     flex-direction: column;
     height: 25vh;
-    width: 25vw;
-    background-color:yellow;
+    width: 360px;
+    
+   
 }
 #entered-area{
 
     height:12.5vh;
-    width:25vw;
+    width:auto;
     text-align: right;
-    background-color:grey;
+    background-color: cyan;
+ 
+}
+
+#result-area{
+
+    height:12.5vh;
+    width:auto;
+    text-align: right;
+    justify-content: center;
+    background-color: yellow;
+  
+}
+#result-text{
+    padding:10px;
+    margin-bottom: 20px;
+      
 }
 #entered-text{
     padding:10px;
       
 }
-#result-area{
 
-    height:12.5vh;
-    width:25vw;
-    text-align: right;
-    background-color:pink;
-}
-#result-text{
-    padding:10px;
-      
-}
-
-.button{
-    font-family: 'Courier New', Courier, monospace;
-    font-size: auto;
+.btn{
+   
+    border-radius: 100%;
+    height:75px;
+    width: 75px;
+    text-decoration: none;
+    border: none;
+    font-family: "Roboto Mono",monospace;
+    font-size:23px;
     
 }
 
 
+
 #button-area{
     height: 75vh;
-    width: 25vw;
+    width: auto;
     background-color:blue;
     display:grid;
-    grid-template-columns: repeat(4,1fr);
-    grid-template-rows: repeat(5,1fr);
+    grid-template-columns: repeat(4,90px);
+    grid-template-rows: repeat(5,90px);
+    justify-items: center;
+    align-items: center;
+    
     grid-template-areas: 
     " clr   del     pow     divd"
     " seven eight   nine    mult"
@@ -62,7 +82,12 @@ body{
     " zro   zro     dec     calc";
 }
 
-#btn0 {grid-area:zro;}
+
+#btn0 {
+    grid-area:zro;
+    width:165px;
+    border-radius: 50px;
+}
 #btn1{grid-area:one;}
 #btn2{grid-area:two;}
 #btn3{grid-area:three;}
