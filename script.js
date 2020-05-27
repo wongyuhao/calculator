@@ -243,23 +243,23 @@ function formatOutput(arr){
     arr.forEach(e =>{
         switch(e){
             case "ADD": {
-                optString+=" + ";
+                optString+="+";
                 break;
             }
             case "MINUS":{
-                optString+=" - ";
+                optString+="-";
                 break;
             }
             case "MULTIPLY":{
-                optString+=" x ";
+                optString+="x";
                 break;
             }
             case "DIVIDE":{
-                optString+=" ÷ ";
+                optString+="÷";
                 break;
             }
             case "POWER":{
-                optString+=" ^ ";
+                optString+="^";
                 break;
             }
             default:{
