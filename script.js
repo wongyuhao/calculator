@@ -272,4 +272,70 @@ function formatOutput(arr){
     return optString;
 }
 
+
+
+
+document.addEventListener('keydown', event => {
+    if (event.code === 'Digit1') {
+        document.querySelector('#btn1').click();
+    }
+    else if (event.code === 'Digit2') {
+        document.querySelector('#btn2').click();
+    }
+    else if (event.code === 'Digit3') {
+        document.querySelector('#btn3').click();
+    }
+    else if (event.code === 'Digit4') {
+        document.querySelector('#btn4').click();
+    }
+    else if (event.code === 'Digit5') {
+        document.querySelector('#btn5').click();
+    }
+    else if (event.code === 'Digit6') {
+        document.querySelector('#btn6').click();
+    }
+    else if (event.code === 'Digit7') {
+        document.querySelector('#btn7').click();
+    }
+    else if (event.code === 'Digit8') {
+        document.querySelector('#btn8').click();
+    }
+    else if (event.code === 'Digit9') {
+        document.querySelector('#btn9').click();
+    }
+    else if (event.code === 'Digit0') {
+        document.querySelector('#btn0').click();
+    }
+    else if (event.key === '.' || event.keyCode == 110) {
+        document.querySelector('#btnDEC').click();
+    }
+    else if (event.key === '-' || event.keyCode == 109) {
+        document.querySelector('#btnMn').click();
+    }
+    else if (event.code === 'Enter') {
+        document.querySelector('#btnCALC').click();
+    }
+    else if (event.code === 'Escape') {
+        document.querySelector('#btnCLR').click();
+    }
+    else if (event.key === '*' || event.keyCode == 106) {
+        document.querySelector('#btnMl').click();
+    }
+    else if (event.key === '+' || event.keyCode == 107) {
+        document.querySelector('#btnPl').click();
+    } 
+    else if (event.key === '/' || event.keyCode == 111) {
+        document.querySelector('#btnDv').click();
+    }
+    else if (event.key === 'ArrowUp') {
+        document.querySelector('#btnPOW').click();
+    }
+    else if (event.key === 'Backspace'||event.key === 'Delete') {
+        document.querySelector('#btnDEL').click();
+    }
+    
+});
+
+
+
 }//exit window.onload()
