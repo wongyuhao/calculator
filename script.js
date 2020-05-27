@@ -1,10 +1,10 @@
 window.onload=function(){
     
-const upper =this.document.querySelector("#entered-text");
-const lower = this.document.querySelector("#result-text");
+const history =this.document.querySelector("#entered-text");
+const result = this.document.querySelector("#result-text");
 
-upper.textContent="";
-lower.textContent="";
+history.textContent="";
+result.textContent="";
 
 let keylog=[];
 let digitHolder="";
@@ -88,10 +88,11 @@ calcBtn.addEventListener("click",function(){
     
     //operate logic goes here
     calculate(keylog);
-    lastAnswer= keylog[0];
+    digitHolder=keylog[0];
     answered=true;
-    lower.textContent=lastAnswer;
-    
+    keylog=[];
+    result.textContent=digitHolder;
+    console.log(`calc: digitH ${digitHolder} ans: ${answered}`)
     }
 })
 
@@ -108,10 +109,7 @@ function deleteChar(){
             keylog.pop();
             digitHolder=keylog.pop();
             }
-        // }else{
-        //     keylog[keylog.length-1] = tempStr.substr(0,tempStr.length-1)
-        // }
-
+        
     }else{
        digitHolder= digitHolder.substr(0,digitHolder.length-1);
        console.log(`deleted, new: ${digitHolder}`);
@@ -124,15 +122,22 @@ function clearDisplay(){
     console.log("clear")
     keylog=[];
     digitHolder="";
-    lower.textContent="";
+    result.textContent="";
     answered=false;
     updateDisplay();
 }
 
 function updateDisplay(){
-    console.log("update display")
-    console.log(keylog);
-    upper.textContent = formatOutput(keylog) +digitHolder;
+    if(answered){
+        history.textContent=digitHolder;
+        result.textContent="";
+        answered=false;
+        updateDisplay();
+    }else{
+        console.log("update display")
+        console.log(keylog);
+        history.textContent = formatOutput(keylog) +digitHolder;
+    }
 ;
     
 }
